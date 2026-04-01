@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Burn | Maximum Potency Thermogenic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #e8000d;
+  --red-dark: #9b0008;
+  --red-glow: rgba(232, 0, 13, 0.4);
+  --red-faint: rgba(232, 0, 13, 0.08);
+  --black: #050507;
+  --dark: #0a0a0e;
+  --panel: #0f0f15;
+  --border: rgba(232, 0, 13, 0.25);
+  --border-dim: rgba(255,255,255,0.07);
+  --white: #ffffff;
+  --off-white: #d4d4dc;
+  --muted: #6b6b7a;
+  --mono: 'Share Tech Mono', monospace;
+  --display: 'Barlow Condensed', sans-serif;
+  --ui: 'Rajdhani', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--ui);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* SCAN LINE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* NOISE TEXTURE */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5,5,7,0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.nav-logo span {
+  color: var(--red);
+}
+
+.nav-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-cta a {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--red);
+  padding: 8px 20px;
+  border: 1px solid var(--red);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-cta a:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .nav-tag { display: none; }
+  .nav-cta a { font-size: 11px; padding: 7px 14px; }
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh;
+  padding-top: 60px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 70% 50%, rgba(232,0,13,0.12) 0%, transparent 70%),
+    linear-gradient(180deg, #050507 0%, #0a0004 100%);
+}
+
+/* diagonal divider */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--red), transparent);
+  transform: rotate(8deg) translateX(-50%);
+  transform-origin: center;
+}
+
+/* grid overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,0,13,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,0,13,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 60px 240px;
+}
+
+.hero-sys {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.hero-sys .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--red-glow); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
+}
+
+.hero-sys span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-headline {
+  font-family: var(--display);
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+
+.hero-headline .line-red {
+  color: var(--red);
+  display: block;
+  text-shadow: 0 0 40px var(--red-glow);
+}
+
+.hero-sub {
+  font-family: var(--ui);
+  font-size: 16px;
+  color: var(--off-white);
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.metric {
+  background: var(--panel);
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.metric-val {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--red);
+  display: block;
+}
+
+.metric-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 18px 40px;
+  border: 2px solid var(--red);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  max-width: 280px;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.hero-btn:hover::before { transform: translateX(0); }
+.hero-btn:hover { box-shadow: 0 0 40px var(--red-glow); }
+
+.hero-btn-arrow {
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+}
+.hero-btn-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-top: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.hero-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+.product-visual {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-visual::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,0,13,0.2) 0%, transparent 70%);
+  animation: glow-pulse 3s infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.product-box {
+  width: 200px;
+  height: 320px;
+  position: relative;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-box::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--red);
+  box-shadow: 0 0 20px var(--red);
+}
+
+.product-box-label {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+.product-box-name {
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--red);
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(232,0,13,0.6);
+  letter-spacing: -1px;
+}
+
+.product-box-sub {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--off-white);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.product-box-badge {
+  margin-top: 20px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: rgba(232,0,13,0.1);
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--red);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product-box-dots {
+  margin-top: 24px;
+  display: flex;
+  gap: 6px;
+}
+
+.product-box-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red-dark);
+}
+.product-box-dots span:nth-child(2) { background: var(--red); }
+
+/* orbiting rings */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(232,0,13,0.15);
+  animation: orbit-spin linear infinite;
+}
+.ring-1 {
+  width: 340px; height: 340px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation-duration: 20s;
+}
+.ring-2 {
+  width: 420px; height: 420px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+.ring-2::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px var(--red);
+}
+
+@keyframes orbit-spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+/* HUD corners */
+.hud-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.hud-corner.tl { top: 10px; left: 10px; border-top: 2px solid var(--red); border-left: 2px solid var(--red); }
+.hud-corner.tr { top: 10px; right: 10px; border-top: 2px solid var(--red); border-right: 2px solid var(--red); }
+.hud-corner.bl { bottom: 10px; left: 10px; border-bottom: 2px solid var(--red); border-left: 2px solid var(--red); }
+.hud-corner.br { bottom: 10px; right: 10px; border-bottom: 2px solid var(--red); border-right: 2px solid var(--red); }
+
+/* counter scroll */
+.counter-strip {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.counter-strip .counter-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--red);
+  letter-spacing: 3px;
+}
+
+.counter-strip .counter-num {
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--white);
+  animation: count-up 4s steps(1) infinite;
+}
+
+@keyframes count-up {
+  0%  { content: "247"; }
+  25% { opacity: 0.3; }
+  50% { opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Mobile hero */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero-right { padding: 40px 24px 20px; order: -1; }
+  .product-visual { width: 200px; height: 280px; }
+  .product-box { width: 150px; height: 240px; }
+  .product-box-name { font-size: 38px; }
+  .ring-1 { width: 260px; height: 260px; }
+  .ring-2 { width: 320px; height: 320px; }
+  .counter-strip { display: none; }
+  .hero-left { padding: 20px 24px 60px; }
+  .hero-headline { font-size: clamp(42px, 12vw, 64px); }
+  .hero-metrics { max-width: 100%; }
+  .hero-btn { max-width: 100%; justify-content: center; }
+}
+
+/* ===================== STATUS BAR ===================== */
+.status-bar {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.status-inner {
+  display: flex;
+  overflow: hidden;
+}
+
+.status-track {
+  display: flex;
+  animation: scroll-ticker 20s linear infinite;
+  white-space: nowrap;
+}
+
+.status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 40px;
+  border-right: 1px solid var(--border-dim);
+  flex-shrink: 0;
+}
+
+.status-item .si-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.status-item span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--off-white);
+  letter-spacing: 2px;
+}
+
+@keyframes scroll-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===================== INGREDIENTS ===================== */
+.section {
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 64px 24px; }
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+}
+
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .ingredients-grid { grid-template-columns: 1fr; }
+}
+
+.ing-card {
+  background: var(--panel);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.ing-card:hover { background: #130009; }
+
+.ing-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.ing-card:hover::before { transform: scaleX(1); }
+
+.ing-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: var(--red-faint);
+  font-size: 18px;
+}
+
+.ing-num {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--border);
+  letter-spacing: 2px;
+}
+
+.ing-name {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.ing-alias {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ing-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===================== PRODUCTS ===================== */
+.products-section {
+  background: var(--dark);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,0,13,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,0,13,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.products-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+@media (max-width: 768px) {
+  .products-section { padding: 64px 0; }
+  .products-inner { padding: 0 24px; }
+}
+
+.products-title-area {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Mobile: 6-pack first */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .pack-six { order: -1; }
+  .pack-two { order: 1; }
+  .pack-three { order: 2; }
+}
+
+.pack-card {
+  background: var(--panel);
+  border: 1px solid var(--border-dim);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pack-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.pack-card.featured {
+  border-color: var(--red);
+  box-shadow: 0 0 40px rgba(232,0,13,0.2);
+}
+
+.pack-badge {
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  display: block;
+  text-align: center;
+}
+
+.pack-dim {
+  display: none;
+}
+
+.pack-card:not(.featured) .pack-badge {
+  background: rgba(232,0,13,0.1);
+  color: var(--red);
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+
+.pack-body {
+  padding: 32px 28px;
+}
+
+.pack-title {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pack-card.featured .pack-title {
+  font-size: 42px;
+  color: var(--white);
+}
+
+.pack-units {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* ============================= */
+/* PACK VISUAL (BASE) */
+/* ============================= */
+
+.pack-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 82px 0 80px;
+  overflow: visible;
+}
+
+.pack-visual .bottle {
+  position: absolute;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.30));
+}
+
+/* ============================= */
+/* 2 BOTTLES */
+/* ============================= */
+
+.pack-visual--2 {
+  height: 120px;
+}
+
+.pack-visual--2 .b1,
+.pack-visual--2 .b2 {
+  width: 124px;
+  top: -20px;
+}
+
+.pack-visual--2 .b1 {
+  left: 50%;
+  transform: translateX(-108px);
+}
+
+.pack-visual--2 .b2 {
+  left: 50%;
+  transform: translateX(4px);
+}
+
+/* ============================= */
+/* 3 BOTTLES */
+/* ============================= */
+
+.pack-visual--3 {
+  height: 138px;
+}
+
+.pack-visual--3 .front.center {
+  width: 122px;
+  left: 50%;
+  top: -28px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.pack-visual--3 .back.left {
+  width: 95px;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-124px);
+  opacity: 0.82;
+  z-index: 2;
+}
+
+.pack-visual--3 .back.right {
+  width: 95px;
+  left: 50%;
+  top: 0px;
+  transform: translateX(24px);
+  opacity: 0.82;
+  z-index: 2;
+}
+
+/* ============================= */
+/* 6 BOTTLES */
+/* ============================= */
+
+.pack-visual--6 {
+  height: 100px;
+}
+
+.pack-visual--6 .main {
+  width: 122px;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.pack-visual--6 .mid-1 {
+  width: 68px;
+  left: 50%;
+  top: 26px;
+  transform: translateX(-92px);
+  z-index: 3;
+}
+
+.pack-visual--6 .mid-2 {
+  width: 68px;
+  left: 50%;
+  top: 26px;
+  transform: translateX(34px);
+  z-index: 3;
+}
+
+.pack-visual--6 .back-1 {
+  width: 62px;
+  left: 50%;
+  top: 26px;
+  transform: translateX(-132px);
+  opacity: 0.52;
+  z-index: 1;
+}
+
+.pack-visual--6 .back-2 {
+  width: 122px;
+  left: 50%;
+  top: -42px;
+  transform: translateX(-60px);
+  opacity: 0.62;
+  z-index: 2;
+}
+
+.pack-visual--6 .back-3 {
+  width: 62px;
+  left: 50%;
+  top: 26px;
+  transform: translateX(88px);
+  opacity: 0.52;
+  z-index: 1;
+}
+
+/* ============================= */
+/* FIX IMPORTANTE */
+/* ============================= */
+
+.pack-card,
+.pkg-card,
+.offer-card {
+  overflow: visible;
+}
+
+.pack-price-row {
+  margin-bottom: 8px;
+}
+
+.pack-old-price {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+
+.pack-price {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pack-card.featured .pack-price {
+  font-size: 56px;
+  color: var(--red);
+  text-shadow: 0 0 30px var(--red-glow);
+}
+
+.pack-per {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.pack-perks {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.pack-perks li {
+  font-size: 13px;
+  color: var(--off-white);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pack-perks li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.pack-cta {
+  display: block;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px;
+  border: 2px solid var(--red);
+  color: var(--red);
+  transition: all 0.25s;
+}
+
+.pack-card.featured .pack-cta {
+  background: var(--red);
+  color: var(--white);
+  font-size: 16px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(232,0,13,0.3);
+}
+
+.pack-cta:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+.pack-guarantee {
+  text-align: center;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.guarantee-icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.guarantee-text {
+  text-align: left;
+}
+
+.guarantee-text strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.guarantee-text span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* ===================== HOW IT WORKS ===================== */
+.how-section {
+  padding: 100px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .how-section { padding: 64px 24px; }
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  background: var(--border);
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-divider { display: none; }
+}
+
+.how-step {
+  background: var(--panel);
+  padding: 40px 32px;
+}
+
+.how-divider {
+  background: var(--border);
+  display: block;
+}
+
+.step-num {
+  font-family: var(--mono);
+  font-size: 40px;
+  color: rgba(232,0,13,0.2);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.step-title {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ===================== FORM ===================== */
+.form-section {
+  background: linear-gradient(180deg, var(--dark), #080003);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,0,13,0.08) 0%, transparent 70%);
+}
+
+.form-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 100px 60px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .form-inner { padding: 64px 24px; }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.form-title {
+  font-family: var(--display);
+  font-size: clamp(34px, 6vw, 56px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.form-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.terminal-form {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.terminal-bar {
+  background: rgba(232,0,13,0.1);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.terminal-dots span:first-child { background: var(--red-dark); }
+.terminal-dots span:nth-child(2) { background: rgba(232, 150, 0, 0.4); }
+
+.terminal-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-left: 8px;
+}
+
+.terminal-body {
+  padding: 36px 32px;
+}
+
+@media (max-width: 640px) {
+  .terminal-body { padding: 24px 20px; }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 540px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.form-field input[type="text"],
+.form-field input[type="tel"] {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dim);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.form-field input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px var(--red-faint);
+}
+
+.form-field input::placeholder {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form-checkbox-area {
+  margin: 20px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.form-checkbox-area input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.form-checkbox-area input[type="checkbox"]:checked {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.form-checkbox-area input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.form-checkbox-area label {
+  font-family: var(--ui);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 40px var(--red-glow);
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background: #030306;
+  border-top: 1px solid var(--border-dim);
+  padding: 80px 60px 0;
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 60px 24px 0; }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 540px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.footer-col-title {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-logo {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--white);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-logo span { color: var(--red); }
+
+.footer-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-list li {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.footer-list li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.footer-list a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-list a:hover { color: var(--red); }
+
+.footer-contact-item {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.footer-contact-icon {
+  color: var(--red);
+  flex-shrink: 0;
+  font-style: normal;
+  margin-top: 1px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-address {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-legal-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.footer-legal-links a:hover { color: var(--red); }
+
+.footer-copy {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-dim);
+  padding-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-copy p {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer-ein {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* ===================== MISC / UTILS ===================== */
+.text-center { text-align: center; }
+
+.disclaimer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .disclaimer { padding: 32px 24px; }
+}
+
+.disclaimer p {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
+
+/* sticky mobile cta */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: var(--red);
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.sticky-cta a {
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta { display: block; }
+}
+
+/* fade-in animation */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fade-up 0.8s ease forwards;
+}
+
+.fade-up-2 { animation-delay: 0.15s; opacity: 0; }
+.fade-up-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-up-4 { animation-delay: 0.45s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-logo">APEX<span>BURN</span></div>
+  <div class="nav-tag">THERMAL PROTOCOL v2.4</div>
+  <div class="nav-cta">
+    <a href="#products">Get Your Supply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-left">
+    <div class="hero-sys">
+      <span class="dot"></span>
+      <span>SYSTEM ACTIVE</span>
+    </div>
+    <p class="hero-eyebrow fade-up">Maximum Potency Thermogenic</p>
+    <h1 class="hero-headline fade-up fade-up-2">
+      IGNITE YOUR
+      <span class="line-red">THERMAL</span>
+      CORE
+    </h1>
+    <p class="hero-sub fade-up fade-up-3">
+      Science-driven thermogenesis engineered to amplify your body's natural caloric burn, sharpen mental focus, and sustain clean energy from your first rep to your last.
+    </p>
+    <div class="hero-metrics fade-up fade-up-3">
+      <div class="metric">
+        <span class="metric-val">6</span>
+        <span class="metric-label">Premium Compounds</span>
+      </div>
+      <div class="metric">
+        <span class="metric-val">60</span>
+        <span class="metric-label">Day Guarantee</span>
+      </div>
+      <div class="metric">
+        <span class="metric-val">0</span>
+        <span class="metric-label">Banned Substances</span>
+      </div>
+    </div>
+    <a href="#products" class="hero-btn fade-up fade-up-4">
+      Activate Your Protocol
+      <span class="hero-btn-arrow"></span>
+    </a>
+  </div>
+
+  <div class="hero-right">
+    <div class="product-visual">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+<div class="pack-bottles">
+  <img src="img/apexburn.png" alt="Apex Burn" class="pack-bottle-img">
+</div>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS TICKER -->
+<div class="status-bar">
+  <div class="status-inner">
+    <div class="status-track">
+      <div class="status-item"><span class="si-dot"></span><span>FREE U.S. SHIPPING ON ORDERS OVER $100</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>60 DAY MONEY BACK GUARANTEE</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>6 TRADEMARKED INGREDIENTS</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>100% TRANSPARENT LABEL</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>BANNED SUBSTANCE FREE</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>GRAS CERTIFIED FORMULA</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>FREE U.S. SHIPPING ON ORDERS OVER $100</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>60 DAY MONEY BACK GUARANTEE</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>6 TRADEMARKED INGREDIENTS</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>100% TRANSPARENT LABEL</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>BANNED SUBSTANCE FREE</span></div>
+      <div class="status-item"><span class="si-dot"></span><span>GRAS CERTIFIED FORMULA</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- INGREDIENTS -->
+<div style="background: var(--black);">
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Active Compounds</div>
+    <h2 class="section-title">The Science<br>Inside <em>Every Scoop</em></h2>
+  </div>
+  <div class="ingredients-grid">
+    <div class="ing-card">
+      <div class="ing-num">01</div>
+      <div class="ing-icon">🔥</div>
+      <h3 class="ing-name">InnoSlim</h3>
+      <p class="ing-alias">Fat Utilization Activator</p>
+      <p class="ing-desc">A patented blend that activates key metabolic pathways, optimizing how efficiently your body taps into stored fat for fuel during and between workouts.</p>
+    </div>
+    <div class="ing-card">
+      <div class="ing-num">02</div>
+      <div class="ing-icon">⚡</div>
+      <h3 class="ing-name">Actiponin</h3>
+      <p class="ing-alias">Thermogenic Amplifier</p>
+      <p class="ing-desc">Clinically studied to boost adiponectin levels, directly amplifying the body's natural fat burning pathways and increasing daily caloric expenditure without stimulant overload.</p>
+    </div>
+    <div class="ing-card">
+      <div class="ing-num">03</div>
+      <div class="ing-icon">🧠</div>
+      <h3 class="ing-name">SXT Energy Complex</h3>
+      <p class="ing-alias">Sustained Focus Matrix</p>
+      <p class="ing-desc">Proprietary sustained release caffeine technology that delivers long-lasting clean energy and laser focus with no crash. Zero jitter. Zero drop-off.</p>
+    </div>
+    <div class="ing-card">
+      <div class="ing-num">04</div>
+      <div class="ing-icon">🌡️</div>
+      <h3 class="ing-name">Grains of Paradise</h3>
+      <p class="ing-alias">Heat Production Driver</p>
+      <p class="ing-desc">A powerful West African spice extract clinically shown to activate brown adipose tissue, increasing your body's core heat production and caloric burn around the clock.</p>
+    </div>
+    <div class="ing-card">
+      <div class="ing-num">05</div>
+      <div class="ing-icon">💪</div>
+      <h3 class="ing-name">MitoBurn</h3>
+      <p class="ing-alias">Cellular Energy Optimizer</p>
+      <p class="ing-desc">Supports mitochondrial efficiency, helping your cells produce more energy from fat substrates. The result is better body composition and improved workout performance.</p>
+    </div>
+    <div class="ing-card">
+      <div class="ing-num">06</div>
+      <div class="ing-icon">🛡️</div>
+      <h3 class="ing-name">CaloriBurn GP</h3>
+      <p class="ing-alias">Caloric Expenditure Booster</p>
+      <p class="ing-desc">A standardized Grains of Paradise extract that has demonstrated the ability to significantly increase whole-body energy expenditure, even at rest.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="background: var(--dark); border-top: 1px solid var(--border-dim);">
+<section class="how-section">
+  <div class="section-header">
+    <div class="section-tag">Protocol Overview</div>
+    <h2 class="section-title">How <em>Burn</em> Works</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <span class="step-num">01</span>
+      <h3 class="step-title">Mix and Activate</h3>
+      <p class="step-desc">Mix one scoop in 8 to 10 ounces of cold water at least 30 minutes before your first meal or training session. The thermal matrix begins activating within minutes.</p>
+    </div>
+    <div class="how-divider"></div>
+    <div class="how-step">
+      <span class="step-num">02</span>
+      <h3 class="step-title">Ignite Thermogenesis</h3>
+      <p class="step-desc">Your core temperature elevates as Grains of Paradise and CaloriBurn GP stimulate brown adipose tissue. Your body naturally starts burning more calories, both during your session and throughout the day.</p>
+    </div>
+    <div class="how-divider"></div>
+    <div class="how-step">
+      <span class="step-num">03</span>
+      <h3 class="step-title">Sustain and Perform</h3>
+      <p class="step-desc">SXT energy keeps you sharp and focused without crash or jitter. InnoSlim and Actiponin keep fat metabolism elevated for hours after your workout ends.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="products-inner">
+    <div class="products-title-area">
+      <div class="section-tag" style="justify-content: center;">Mission Loadout</div>
+      <h2 class="section-title">Choose Your <em>Supply</em></h2>
+      <p style="font-size: 15px; color: var(--muted); margin-top: 12px; font-family: var(--ui);">The longer your commitment, the greater your results. Most serious users choose the 6 bottle protocol.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- 2 PACK -->
+      <div class="pack-card pack-two">
+        <div class="pack-badge">Starter Pack</div>
+        <div class="pack-body">
+          <h3 class="pack-title">2 Bottles</h3>
+          <p class="pack-units">60 Day Supply</p>
+<div class="pack-visual pack-visual--2">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle b1">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle b2">
+</div>
+          <div class="pack-price-row">
+            <p class="pack-old-price">$129.90</p>
+            <p class="pack-price">$89</p>
+          </div>
+          <p class="pack-per">$44.50 per bottle</p>
+          <ul class="pack-perks">
+            <li>2 bottles of Apex Burn</li>
+            <li>Free U.S. shipping</li>
+            <li>60 day guarantee</li>
+          </ul>
+          <a href="#" class="pack-cta">Activate Protocol</a>
+        </div>
+      </div>
+
+      <!-- 6 PACK (FEATURED, order: -1 on mobile via CSS) -->
+      <div class="pack-card featured pack-six">
+        <div class="pack-badge">Best Value. Most Popular.</div>
+        <div class="pack-body">
+          <h3 class="pack-title">6 Bottles</h3>
+          <p class="pack-units">180 Day Supply</p>
+<div class="pack-visual pack-visual--6">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle back back-1">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle back back-2">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle back back-3">
+
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle mid mid-1">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle front main">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle mid mid-2">
+</div>
+          <div class="pack-price-row">
+            <p class="pack-old-price">$389.70</p>
+            <p class="pack-price">$234</p>
+          </div>
+          <p class="pack-per">$39 per bottle. You save $155.</p>
+          <ul class="pack-perks">
+            <li>6 bottles of Apex Burn</li>
+            <li>Free priority U.S. shipping</li>
+            <li>60 day money back guarantee</li>
+            <li>Maximum results protocol</li>
+            <li>Lowest price per bottle</li>
+          </ul>
+          <a href="#" class="pack-cta">Activate Protocol</a>
+        </div>
+      </div>
+
+      <!-- 3 PACK -->
+      <div class="pack-card pack-three">
+        <div class="pack-badge">Core Protocol</div>
+        <div class="pack-body">
+          <h3 class="pack-title">3 Bottles</h3>
+          <p class="pack-units">90 Day Supply</p>
+<div class="pack-visual pack-visual--3">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle back left">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle front center">
+  <img src="img/apexburn.png" alt="Apex Burn" class="bottle back right">
+</div>
+          <div class="pack-price-row">
+            <p class="pack-old-price">$194.85</p>
+            <p class="pack-price">$129</p>
+          </div>
+          <p class="pack-per">$43 per bottle</p>
+          <ul class="pack-perks">
+            <li>3 bottles of Apex Burn</li>
+            <li>Free U.S. shipping</li>
+            <li>60 day guarantee</li>
+          </ul>
+          <a href="#" class="pack-cta">Activate Protocol</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pack-guarantee">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <strong>60 Day Money Back Guarantee</strong>
+        <span>If you are not satisfied with your results, contact us within 60 days for a full refund. No questions asked.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="subscribe">
+  <div class="form-inner">
+    <div class="form-header">
+      <div class="section-tag" style="justify-content: center;">Early Access</div>
+      <h2 class="form-title">Get Exclusive <em style="color: var(--red); font-style: normal;">Deals</em> First</h2>
+      <p class="form-sub">Subscribe to receive early access to new protocols, subscriber-only pricing, and performance content delivered directly to your phone.</p>
+    </div>
+
+    <div class="terminal-form">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="terminal-label">SUBSCRIBER TERMINAL</span>
+      </div>
+      <div class="terminal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstName" placeholder="Your first name" autocomplete="given-name">
+            </div>
+            <div class="form-field">
+              <label for="phone">Mobile Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-checkbox-area">
+            <input type="checkbox" id="sms-consent" name="smsConsent">
+            <label for="sms-consent">By checking this box, I agree to receive recurring automated marketing text messages from Grax Media at the phone number provided. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. View our Privacy Policy and Terms of Service.</label>
+          </div>
+
+          <button type="submit" class="form-submit">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary. Apex Burn is intended for use by healthy adults 18 years of age or older. Consult a physician prior to using this or any dietary supplement, especially if you are pregnant, nursing, have a known medical condition, or are taking prescription medications.</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+
+    <!-- Col 1: About -->
+    <div>
+      <span class="footer-logo">APEX<span>BURN</span></span>
+      <p class="footer-desc">Apex Burn is developed by Apex Labs, a science-first supplement company dedicated to creating premium, clinically researched formulas for people who demand real performance. Every ingredient is transparently labeled, rigorously tested, and GRAS certified.</p>
+      <p style="font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 1px;">Powered by Grax Media</p>
+    </div>
+
+    <!-- Col 2: What We Do -->
+    <div>
+      <h4 class="footer-col-title">What We Do</h4>
+      <ul class="footer-list">
+        <li>Thermogenic fat burning supplements</li>
+        <li>Performance nutrition formulas</li>
+        <li>Clinically researched compounds</li>
+        <li>Transparent label standards</li>
+        <li>Science-backed product development</li>
+        <li>Men's health and longevity protocols</li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Company -->
+    <div>
+      <h4 class="footer-col-title">Company</h4>
+      <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Science</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Affiliate Program</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Contact -->
+    <div>
+      <h4 class="footer-col-title">Contact</h4>
+      <div class="footer-contact-item">
+        <em class="footer-contact-icon">&#9990;</em>
+        <span style="font-size: 13px; color: var(--muted);">+1 (800) 555-0198</span>
+      </div>
+      <div class="footer-contact-item">
+        <em class="footer-contact-icon">&#9993;</em>
+        <span style="font-size: 13px; color: var(--muted);">support@apexburn.com</span>
+      </div>
+      <div class="footer-contact-item" style="margin-top: 8px;">
+        <em class="footer-contact-icon">&#9432;</em>
+        <span style="font-size: 13px; color: var(--muted);">Monday through Friday, 9 AM to 5 PM EST</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; padding: 28px 0 0;">
+    <div class="footer-address">
+      <p>Grax Media LLC. 1234 Innovation Drive, Suite 500, Austin, TX 78701, United States.</p>
+      <p style="margin-top: 6px;">EIN: 87-1234567</p>
+    </div>
+    <div class="footer-legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">SMS Opt-Out</a>
+    </div>
+    <div class="footer-copy" style="width: 100%; padding-top: 16px; border-top: 1px solid var(--border-dim); padding-bottom: 28px; margin-top: 16px;">
+      <p>Copyright 2025 Grax Media LLC. All rights reserved.</p>
+      <p style="font-family: var(--mono); font-size: 11px; color: var(--muted);">Results may vary. These statements have not been evaluated by the FDA.</p>
+    </div>
+  </div>
+
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#products">Get Apex Burn. Save Up To 40%.</a>
+</div>
+
+</body>
+</html>
